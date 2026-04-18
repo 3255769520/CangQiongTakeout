@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/sky_takeout?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true"
+    username: root
+    password: 123456
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+
+sky:
+  jwt:
+    admin-secret-key: hhxy_cangqiong_takeout_2026_top_secret
+    admin-ttl: 7200000
+    admin-token-name: token
+    user-secret-key: hhxy_cangqiong_takeout_2026_user_secret
+    user-ttl: 7200000
+    user-token-name: authentication
+  alioss:
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    accessKeyId: ${your_access_key_id}
+    accessKeySecret: ${your_access_key_secret}
+    bucketName: ${your_bucket_name}
+
+  wechat:
+    appid: wxe37803bf1b585885
+    secret: 01af8bd48929c78f27101691f851f9d8
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted
